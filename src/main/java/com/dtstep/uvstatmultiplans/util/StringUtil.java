@@ -17,7 +17,6 @@ package com.dtstep.uvstatmultiplans.util;
  * limitations under the License.
  */
 
-import com.dtstep.lighthouse.common.constant.StatConst;
 import org.apache.commons.lang3.StringUtils;
 import org.apache.commons.lang3.math.NumberUtils;
 
@@ -103,9 +102,6 @@ public class StringUtil {
         return !isEmpty(str);
     }
 
-    public static boolean isEmptyOrNullStr(String str){
-        return str == null || str.trim().length() == 0 || StatConst.NULL_STR.equals(str) || ("'" + StatConst.NULL_STR + "'").equals(str);
-    }
 
     public static String join(Collection var0, String var1) {
         StringBuilder var2 = new StringBuilder(256);

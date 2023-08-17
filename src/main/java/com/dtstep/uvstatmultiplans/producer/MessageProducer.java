@@ -39,7 +39,8 @@ public class MessageProducer {
                     userBehavior.setPage(page);
                     userBehavior.setBehaviorTime(t);
                     String message = JsonUtil.toJSONString(userBehavior);
-                    KafkaSender.send(message);
+                    System.out.println(message);
+                    //KafkaSender.send(message);
                 }
             }
         }
