@@ -55,7 +55,7 @@ public class UVStatPlan1 {
         }).assignTimestampsAndWatermarks
                 (WatermarkStrategy.<UserBehavior>forMonotonousTimestamps().withTimestampAssigner((SerializableTimestampAssigner<UserBehavior>)
                         (userBehavior, l) -> userBehavior.getBehaviorTime()));
-        dataStream.keyBy((KeySelector<UserBehavior, String>) UserBehavior::getPage).window(TumblingEventTimeWindows.of(Time.seconds(30)))
+        dataStream.keyBy((KeySelector<UserBehavior, String>) UserBehavior::getPage).window(TumblingEventTimeWindows.of(Time.minutes(1)))
                 .trigger(new TimeIntervalTrigger<>(5,TimeUnit.SECONDS))
                 .aggregate(new UVStatAggregate(),new WindowResultFunction())
                 .map(x -> {
