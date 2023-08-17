@@ -1,6 +1,5 @@
 package com.dtstep.uvstatmultiplans.trigger;
 
-import com.dtstep.uvstatmultiplans.util.DateUtil;
 import org.apache.flink.api.common.functions.ReduceFunction;
 import org.apache.flink.api.common.state.ReducingState;
 import org.apache.flink.api.common.state.ReducingStateDescriptor;
